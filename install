@@ -35,6 +35,7 @@ declare -l omvextrasInstall=""
 declare -i skipFlash=0
 declare -i skipNet=0
 declare -i version
+omv_version="=5.5.12-1"
 
 cpuFreqDef="/etc/default/cpufrequtils"
 crda="/etc/default/crda"
@@ -168,7 +169,7 @@ if [[ ! "${omvInstall}" == "ii" ]]; then
 
   echo "Installing openmediavault..."
   aptFlags="--yes --auto-remove --show-upgraded --allow-downgrades --allow-change-held-packages --no-install-recommends"
-  cmd="apt-get ${aptFlags} install openmediavault"
+  cmd="apt-get ${aptFlags} install openmediavault${omv_version}"
   if ! ${cmd}; then
     echo "failed to install openmediavault package."
     exit 2
