@@ -212,7 +212,7 @@ fi
 #wget ${url}/${file}
 wget https://github.com/icersong/OMV-packages/archive/master.zip -O OMV-packages-master.zip
 unzip OMV-packages-master.zip
-cp OMV-packages-master/${file}
+cp OMV-packages-master/${file} .
 rm -rf OMV-packages-master.zip OMV-packages-master
 
 if [ -f "${file}" ]; then
