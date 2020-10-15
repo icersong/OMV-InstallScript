@@ -196,6 +196,7 @@ fi
 
 # remove backports from sources.list to avoid duplicate sources warning
 sed -i "/\(stretch\|buster\)-backports/d" /etc/apt/sources.list
+sed -i 's/httpredir.debian.org/mirrors.ustc.edu.cn/g' /etc/apt/sources.list.d/openmediavault-kernel-backports.list
 
 if [ "${codename}" = "eoan" ]; then
   omv_set_default "OMV_APT_USE_KERNEL_BACKPORTS" false true
